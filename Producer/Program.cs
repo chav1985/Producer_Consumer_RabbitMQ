@@ -8,33 +8,30 @@ namespace Producer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
             var factory = new ConnectionFactory() { HostName = "localhost" };
 
             using (var connection = factory.CreateConnection())
             {
                 using (var channel = connection.CreateModel())
                 {
-                    //criar mensagem RabbitMQ
-                    channel.QueueDeclare(queue: "mensagem_2",
+                    //cria a fila RabbitMQ e a mensagem
+                    channel.QueueDeclare(queue: "mensagem_5",
                         durable: false,
                         exclusive: false,
                         autoDelete: false,
                         arguments: null);
 
-                    string message = "Teste de mensagem RabbitMQ";
+                    string message = "Teste de mensagem RabbitMQ da mensagem_5";
                     var body = Encoding.UTF8.GetBytes(message);
                     Console.WriteLine("Mensagem criada");
 
                     //enviar mensagem
                     channel.BasicPublish(exchange: "",
-                        routingKey: "mensagem_2",
+                        routingKey: "mensagem_5",
                         basicProperties: null,
                         body: body);
                     Console.WriteLine("Mensagem enviada");
                 }
-                Console.ReadKey();
             }
         }
     }
