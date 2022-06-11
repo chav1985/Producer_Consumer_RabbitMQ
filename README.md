@@ -2,7 +2,7 @@
 
 Foi utilizado o [.NET Core 5.0](https://www.microsoft.com/net/download).
 
-É necessário tem o servidor do [RabbitMQ] (https://www.rabbitmq.com/download.html) instalado para executar o projeto.
+É necessário tem o servidor do [RabbitMQ](https://www.rabbitmq.com/download.html) instalado para executar o projeto.
 
 ## Habilitando o Dashboard do RabbitMQ
 
