@@ -16,7 +16,7 @@ namespace Consumer
                 using (var channel = connection.CreateModel())
                 {
                     //cria a fila RabbitMQ
-                    channel.QueueDeclare(queue: "mensagem_5",
+                    channel.QueueDeclare(queue: "mensagem_1",
                         durable: false,
                         exclusive: false,
                         autoDelete: false,
@@ -30,7 +30,7 @@ namespace Consumer
                         var message = Encoding.UTF8.GetString(body);
                         Console.WriteLine(message);
                     };
-                    channel.BasicConsume(queue: "mensagem_5",
+                    channel.BasicConsume(queue: "mensagem_1",
                         autoAck: true,
                         consumer: consumer);
 
