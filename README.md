@@ -23,5 +23,3 @@ Na raiz da solution, execute os comandos em um terminal para compilar:
 dotnet restore
 dotnet build -c Release
 ```
-
-## Instruções para executar o projeto
